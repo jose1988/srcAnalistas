@@ -4,14 +4,14 @@
  */
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.GestionDeGrupo_Service;
-import com.pangea.capadeservicios.servicios.GestionDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.Grupo;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.UsuarioGrupoRol;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Grupo;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -476,30 +476,29 @@ public class usuarioGrupoController implements Serializable {
         Redireccionar();
     }
 
-    private java.util.List<com.pangea.capadeservicios.servicios.Grupo> listarGrupos() {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Grupo> listarGrupos() {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
         return port.listarGrupos();
     }
 
-    private Usuario buscarUsuario(com.pangea.capadeservicios.servicios.Usuario usuarioActual) {
-        com.pangea.capadeservicios.servicios.GestionDeUsuarios port = service.getGestionDeUsuariosPort();
-        return port.buscarUsuario(usuarioActual);
-    }
-
-    private java.util.List<com.pangea.capadeservicios.servicios.UsuarioGrupoRol> listarUsuariosGrupo(com.pangea.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol> listarUsuariosGrupo(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
         return port.listarUsuariosGrupo(grupousuarios, borrado);
     }
 
-    private WrResultado logOut(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
-        return port.logOut(sesionActual);
+    private Usuario buscarUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios port = service.getGestionDeUsuariosPort();
+        return port.buscarUsuario(usuarioActual);
     }
 
-    private boolean logSesion(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
+    private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
     }
 
-    
+    private WrResultado logOut(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
+        return port.logOut(sesionActual);
+    }
+
 }

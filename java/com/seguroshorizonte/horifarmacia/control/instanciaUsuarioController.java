@@ -4,13 +4,13 @@
  */
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.GestionDeInstancias_Service;
-import com.pangea.capadeservicios.servicios.Instancia;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.WrInstancia;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeInstancias_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Instancia;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.WrInstancia;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -645,28 +645,28 @@ public class instanciaUsuarioController {
         Redireccionar();
     }
 
-    private WrInstancia consultarInstancias(com.pangea.capadeservicios.servicios.Usuario usuarioActual, com.pangea.capadeservicios.servicios.Instancia instanciaActual) {
-        com.pangea.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
+    private WrInstancia consultarInstancias(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual, com.seguroshorizonte.capadeservicios.servicios.Instancia instanciaActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
         return port.consultarInstancias(usuarioActual, instanciaActual);
     }
 
-    private WrResultado logOut(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
+    private WrResultado logOut(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
         return port.logOut(sesionActual);
     }
 
-    private boolean logSesion(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
+    private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_1.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
     }
 
     private java.util.List<java.lang.String> buscarEstados() {
-        com.pangea.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
         return port.buscarEstados();
     }
 
-    private WrResultado cerrarInstancia(com.pangea.capadeservicios.servicios.Instancia instanciaActual, com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
+    private WrResultado cerrarInstancia(com.seguroshorizonte.capadeservicios.servicios.Instancia instanciaActual, com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeInstancias port = service.getGestionDeInstanciasPort();
         return port.cerrarInstancia(instanciaActual, sesionActual);
     }
 

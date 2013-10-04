@@ -3,12 +3,12 @@
  * and open the template in the editor.
  */
 package com.seguroshorizonte.horifarmacia.control;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.Actividad;
-import com.pangea.capadeservicios.servicios.GestionDeActividades_Service;
-import com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.Actividad;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades_Service;
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
 import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
