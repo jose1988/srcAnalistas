@@ -4,21 +4,21 @@
  */
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.Post;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.Bandeja;
-import com.pangea.capadeservicios.servicios.Actividad;
-import com.pangea.capadeservicios.servicios.Condicion;
-import com.pangea.capadeservicios.servicios.GestionDeActividades_Service;
-import com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.GestionDeGrupo_Service;
-import com.pangea.capadeservicios.servicios.Grupo;
-import com.pangea.capadeservicios.servicios.Mensajeria_Service;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.WrActividad;
-import com.pangea.capadeservicios.servicios.WrBandeja;
-import com.pangea.capadeservicios.servicios.WrPost;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.Post;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.Bandeja;
+import com.seguroshorizonte.capadeservicios.servicios.Actividad;
+import com.seguroshorizonte.capadeservicios.servicios.Condicion;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Grupo;
+import com.seguroshorizonte.capadeservicios.servicios.Mensajeria_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.WrActividad;
+import com.seguroshorizonte.capadeservicios.servicios.WrBandeja;
+import com.seguroshorizonte.capadeservicios.servicios.WrPost;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -832,52 +832,52 @@ public class gestionActividadesController implements Serializable {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mail Sent!"));
     }
 
-    private WrActividad consultarActividades(com.pangea.capadeservicios.servicios.Usuario usuarioActual, com.pangea.capadeservicios.servicios.Actividad actividadActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+    private WrActividad consultarActividades(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual, com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.consultarActividades(usuarioActual, actividadActual);
     }
 
-    private WrResultado finalizarActividad(com.pangea.capadeservicios.servicios.Actividad actividadActual, com.pangea.capadeservicios.servicios.Sesion sesionActual, com.pangea.capadeservicios.servicios.Condicion condicionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+    private WrResultado finalizarActividad(com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual, com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual, com.seguroshorizonte.capadeservicios.servicios.Condicion condicionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.finalizarActividad(actividadActual, sesionActual, condicionActual);
     }
 
-    private WrResultado iniciarActividad(com.pangea.capadeservicios.servicios.Actividad actividadActual, com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+    private WrResultado iniciarActividad(com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual, com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.iniciarActividad(actividadActual, sesionActual);
     }
 
    
 
-    private java.util.List<com.pangea.capadeservicios.servicios.Grupo> gruposUsuario(com.pangea.capadeservicios.servicios.Usuario user) {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Grupo> gruposUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario user) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
         return port.gruposUsuario(user);
     }
 
     private java.util.List<java.lang.String> buscarEstados() {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.buscarEstados();
     }
 
-    private WrResultado pendienteActividad(com.pangea.capadeservicios.servicios.Actividad actividadActual, com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+    private WrResultado pendienteActividad(com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual, com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.pendienteActividad(actividadActual, sesionActual);
     }
 
    
 
-    private boolean logSesion(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_3.getGestionDeControlDeUsuariosPort();
+    private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_3.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
     }
 
-    private WrResultado logOut(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_3.getGestionDeControlDeUsuariosPort();
+    private WrResultado logOut(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_3.getGestionDeControlDeUsuariosPort();
         return port.logOut(sesionActual);
     }
 
-    private WrActividad consultarActividad(com.pangea.capadeservicios.servicios.Actividad actividadActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
+    private WrActividad consultarActividad(com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.consultarActividad(actividadActual);
     }
 }

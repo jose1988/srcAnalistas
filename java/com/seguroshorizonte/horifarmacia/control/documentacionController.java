@@ -4,11 +4,11 @@
  */
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.Actividad;
-import com.pangea.capadeservicios.servicios.Condicion;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.GestionDeActividades_Service;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.Actividad;
+import com.seguroshorizonte.capadeservicios.servicios.Condicion;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades_Service;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -106,8 +106,8 @@ public class documentacionController {
         this.actividad_actual = actividad_actual;
     }
 
-    private WrResultado finalizarActividad(com.pangea.capadeservicios.servicios.Actividad actividadActual, com.pangea.capadeservicios.servicios.Sesion sesionActual, com.pangea.capadeservicios.servicios.Condicion condicionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeActividades port = service.getGestionDeActividadesPort();
+    private WrResultado finalizarActividad(com.seguroshorizonte.capadeservicios.servicios.Actividad actividadActual, com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual, com.seguroshorizonte.capadeservicios.servicios.Condicion condicionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service.getGestionDeActividadesPort();
         return port.finalizarActividad(actividadActual, sesionActual, condicionActual);
     }
     
