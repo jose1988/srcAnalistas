@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios.capadeservicios.pangea.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios.capadeservicios.pangea.com/">
+
+<xs:element name="buscarUsuario" type="tns:buscarUsuario"/>
+
+<xs:element name="buscarUsuarioResponse" type="tns:buscarUsuarioResponse"/>
+
+<xs:element name="clasificacionUsuario" type="tns:clasificacionUsuario"/>
+
+<xs:element name="contarUsuario" type="tns:contarUsuario"/>
+
+<xs:element name="contarUsuarioResponse" type="tns:contarUsuarioResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="listarUsuarios" type="tns:listarUsuarios"/>
+
+<xs:element name="listarUsuariosResponse" type="tns:listarUsuariosResponse"/>
+
+<xs:element name="organizacion" type="tns:organizacion"/>
+
+<xs:element name="skin" type="tns:skin"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="contarUsuario">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="contarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuario">
+<xs:sequence>
+<xs:element name="usuarioActual" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="clave" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="diasValidezClave" type="xs:int"/>
+<xs:element name="direccionOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionPersonal" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaActualizacionClave" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="idClasificacionUsuario" type="tns:clasificacionUsuario" minOccurs="0"/>
+<xs:element name="idOrganizacion" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="idSkin" type="tns:skin" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="primerApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="primerNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="rif" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosPersonal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionUsuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="organizacion">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idOrganizacionPadre" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="skin">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarUsuarios">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

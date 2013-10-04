@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="WebApplication2PU" transaction-type="JTA">
+    <jta-data-source>postgres</jta-data-source>
+    <class>com.pangea.capadeservicios.entidades.actividad</class>
+    <class>com.pangea.capadeservicios.entidades.auditoria</class>
+    <class>com.pangea.capadeservicios.entidades.bandeja</class>
+    <class>com.pangea.capadeservicios.entidades.clasificacion_proceso</class>
+    <class>com.pangea.capadeservicios.entidades.clasificacion_rol</class>
+    <class>com.pangea.capadeservicios.entidades.clasificacion_tarea</class>
+    <class>com.pangea.capadeservicios.entidades.clasificacion_usuario</class>
+    <class>com.pangea.capadeservicios.entidades.cola_de_tarea</class>
+    <class>com.pangea.capadeservicios.entidades.condicion</class>
+    <class>com.pangea.capadeservicios.entidades.contador_round_robin</class>
+    <class>com.pangea.capadeservicios.entidades.destinatario</class>
+    <class>com.pangea.capadeservicios.entidades.documento</class>
+    <class>com.pangea.capadeservicios.entidades.equivalencia_tiempo</class>
+    <class>com.pangea.capadeservicios.entidades.grupo</class>
+    <class>com.pangea.capadeservicios.entidades.grupo_politica_tarea</class>
+    <class>com.pangea.capadeservicios.entidades.instancia</class>
+    <class>com.pangea.capadeservicios.entidades.mensaje</class>
+    <class>com.pangea.capadeservicios.entidades.organizacion</class>
+    <class>com.pangea.capadeservicios.entidades.periodo</class>
+    <class>com.pangea.capadeservicios.entidades.periodo_actividad</class>
+    <class>com.pangea.capadeservicios.entidades.periodo_grupo_proceso</class>
+    <class>com.pangea.capadeservicios.entidades.politica</class>
+    <class>com.pangea.capadeservicios.entidades.politica_round_robin</class>
+    <class>com.pangea.capadeservicios.entidades.post</class>
+    <class>com.pangea.capadeservicios.entidades.post_en_bandeja</class>
+    <class>com.pangea.capadeservicios.entidades.prioridad</class>
+    <class>com.pangea.capadeservicios.entidades.prioridad_mensaje_en_linea</class>
+    <class>com.pangea.capadeservicios.entidades.proceso</class>
+    <class>com.pangea.capadeservicios.entidades.regla_transicion</class>
+    <class>com.pangea.capadeservicios.entidades.regla_transicion_transicion</class>
+    <class>com.pangea.capadeservicios.entidades.reporte</class>
+    <class>com.pangea.capadeservicios.entidades.reporte_rol</class>
+    <class>com.pangea.capadeservicios.entidades.rol</class>
+    <class>com.pangea.capadeservicios.entidades.sesion</class>
+    <class>com.pangea.capadeservicios.entidades.skin</class>
+    <class>com.pangea.capadeservicios.entidades.tarea</class>
+    <class>com.pangea.capadeservicios.entidades.tarea_inicio_proceso</class>
+    <class>com.pangea.capadeservicios.entidades.tarea_rol</class>
+    <class>com.pangea.capadeservicios.entidades.transicion</class>
+    <class>com.pangea.capadeservicios.entidades.usuario</class>
+    <class>com.pangea.capadeservicios.entidades.usuario_grupo_rol</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <shared-cache-mode>NONE</shared-cache-mode>
+    <properties/>
+  </persistence-unit>
+</persistence>
