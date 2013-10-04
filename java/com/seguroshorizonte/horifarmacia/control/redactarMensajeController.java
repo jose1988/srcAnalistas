@@ -1,14 +1,14 @@
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.GestionDeGrupo_Service;
-import com.pangea.capadeservicios.servicios.Grupo;
-import com.pangea.capadeservicios.servicios.Mensajeria_Service;
-import com.pangea.capadeservicios.servicios.Post;
-import com.pangea.capadeservicios.servicios.Rol;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.UsuarioGrupoRol;
-import com.pangea.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Grupo;
+import com.seguroshorizonte.capadeservicios.servicios.Mensajeria_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Post;
+import com.seguroshorizonte.capadeservicios.servicios.Rol;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -193,23 +193,23 @@ public class redactarMensajeController {
     }
 //Servicios usados de la capa de servicios
 
-    private WrResultado enviarPost(com.pangea.capadeservicios.servicios.Post mensajeActual) {
-        com.pangea.capadeservicios.servicios.Mensajeria port = service.getMensajeriaPort();
+    private WrResultado enviarPost(com.seguroshorizonte.capadeservicios.servicios.Post mensajeActual) {
+        com.seguroshorizonte.capadeservicios.servicios.Mensajeria port = service.getMensajeriaPort();
         return port.enviarPost(mensajeActual);
     }
 
-    private java.util.List<com.pangea.capadeservicios.servicios.Grupo> listarGrupos() {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Grupo> listarGrupos() {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
         return port.listarGrupos();
     }
 
-    private java.util.List<com.pangea.capadeservicios.servicios.Rol> listarRolesPorGrupo(com.pangea.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Rol> listarRolesPorGrupo(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
         return port.listarRolesPorGrupo(grupousuarios, borrado);
     }
 
-    private java.util.List<com.pangea.capadeservicios.servicios.UsuarioGrupoRol> listarUsuariosPorGrupoYRol(com.pangea.capadeservicios.servicios.Grupo grupousuarios, com.pangea.capadeservicios.servicios.Rol roles) {
-        com.pangea.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
+    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol> listarUsuariosPorGrupoYRol(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, com.seguroshorizonte.capadeservicios.servicios.Rol roles) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
         return port.listarUsuariosPorGrupoYRol(grupousuarios, roles);
     }
 }

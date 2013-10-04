@@ -1,11 +1,11 @@
 package com.seguroshorizonte.horifarmacia.control;
 
-import com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.GestionDeUsuarios_Service;
-import com.pangea.capadeservicios.servicios.Sesion;
-import com.pangea.capadeservicios.servicios.Usuario;
-import com.pangea.capadeservicios.servicios.WrResultado;
-import com.pangea.capadeservicios.servicios.WrSesion;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios_Service;
+import com.seguroshorizonte.capadeservicios.servicios.Sesion;
+import com.seguroshorizonte.capadeservicios.servicios.Usuario;
+import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.WrSesion;
 import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -202,18 +202,18 @@ public class logIntOutController implements Serializable{
     /**
      * Servicio consumido de la capa de servicios para inicio de sesión
      */
-    private WrSesion logIn(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service.getGestionDeControlDeUsuariosPort();
+    private WrSesion logIn(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service.getGestionDeControlDeUsuariosPort();
         return port.logIn(sesionActual);
     }
 
-    private Usuario buscarUsuario(com.pangea.capadeservicios.servicios.Usuario usuarioActual) {
-        com.pangea.capadeservicios.servicios.GestionDeUsuarios port = service_1.getGestionDeUsuariosPort();
+    private Usuario buscarUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios port = service_1.getGestionDeUsuariosPort();
         return port.buscarUsuario(usuarioActual);
     }
 
-    private boolean logSesion(com.pangea.capadeservicios.servicios.Sesion sesionActual) {
-        com.pangea.capadeservicios.servicios.GestionDeControlDeUsuarios port = service.getGestionDeControlDeUsuariosPort();
+    private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
     }
 }
