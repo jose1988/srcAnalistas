@@ -30,14 +30,14 @@ import org.primefaces.model.TreeNode;
 
 /**
  *
- * @author PANGEA
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "instanciaUsuarioController")
 @SessionScoped
 public class instanciaUsuarioController {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeControlDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeInstancias.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeInstancias.wsdl")
     private GestionDeInstancias_Service service;
     
     /*
@@ -470,7 +470,7 @@ public class instanciaUsuarioController {
         
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/actividadesPorInstancia.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/actividadesPorInstancia.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }
@@ -623,7 +623,7 @@ public class instanciaUsuarioController {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }

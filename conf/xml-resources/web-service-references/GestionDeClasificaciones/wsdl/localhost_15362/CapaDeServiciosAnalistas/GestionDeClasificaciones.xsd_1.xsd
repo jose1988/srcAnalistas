@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios.capadeservicios.seguroshorizonte.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios.capadeservicios.seguroshorizonte.com/">
+
+<xs:element name="ConsultarDetallesClasificacionProceso" type="tns:ConsultarDetallesClasificacionProceso"/>
+
+<xs:element name="ConsultarDetallesClasificacionProcesoResponse" type="tns:ConsultarDetallesClasificacionProcesoResponse"/>
+
+<xs:element name="ConsultarDetallesClasificacionRol" type="tns:ConsultarDetallesClasificacionRol"/>
+
+<xs:element name="ConsultarDetallesClasificacionRolResponse" type="tns:ConsultarDetallesClasificacionRolResponse"/>
+
+<xs:element name="ConsultarDetallesClasificacionUsuario" type="tns:ConsultarDetallesClasificacionUsuario"/>
+
+<xs:element name="ConsultarDetallesClasificacionUsuarioResponse" type="tns:ConsultarDetallesClasificacionUsuarioResponse"/>
+
+<xs:element name="ConsultardetallesClasificacionTarea" type="tns:ConsultardetallesClasificacionTarea"/>
+
+<xs:element name="ConsultardetallesClasificacionTareaResponse" type="tns:ConsultardetallesClasificacionTareaResponse"/>
+
+<xs:element name="clasificacionProceso" type="tns:clasificacionProceso"/>
+
+<xs:element name="clasificacionRol" type="tns:clasificacionRol"/>
+
+<xs:element name="clasificacionTarea" type="tns:clasificacionTarea"/>
+
+<xs:element name="clasificacionUsuario" type="tns:clasificacionUsuario"/>
+
+<xs:element name="equivalenciaTiempo" type="tns:equivalenciaTiempo"/>
+
+<xs:element name="organizacion" type="tns:organizacion"/>
+
+<xs:element name="politica" type="tns:politica"/>
+
+<xs:element name="prioridad" type="tns:prioridad"/>
+
+<xs:element name="proceso" type="tns:proceso"/>
+
+<xs:element name="rol" type="tns:rol"/>
+
+<xs:element name="skin" type="tns:skin"/>
+
+<xs:element name="tarea" type="tns:tarea"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="ConsultarDetallesClasificacionUsuario">
+<xs:sequence>
+<xs:element name="clasificacionUsuarioActual" type="tns:clasificacionUsuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionUsuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarDetallesClasificacionUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrClasificacionUsuarioDetalle" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrClasificacionUsuarioDetalle">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idClasificacionUsuario" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="usuarios" type="tns:usuario" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="clave" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="diasValidezClave" type="xs:int"/>
+<xs:element name="direccionOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionPersonal" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaActualizacionClave" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="idClasificacionUsuario" type="tns:clasificacionUsuario" minOccurs="0"/>
+<xs:element name="idOrganizacion" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="idSkin" type="tns:skin" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="primerApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="primerNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="rif" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosPersonal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="organizacion">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idOrganizacionPadre" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="skin">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarDetallesClasificacionRol">
+<xs:sequence>
+<xs:element name="clasificacionRolActual" type="tns:clasificacionRol" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionRol">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarDetallesClasificacionRolResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrClasificacionRolDetalle" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrClasificacionRolDetalle">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idClasificacionRol" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="rols" type="tns:rol" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rol">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="documentacion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idClasificacionRol" type="tns:clasificacionRol" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarDetallesClasificacionProceso">
+<xs:sequence>
+<xs:element name="clasificacionProcesoActual" type="tns:clasificacionProceso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionProceso">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarDetallesClasificacionProcesoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrClasificacionProcesoDetalle" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrClasificacionProcesoDetalle">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idClasificacionProceso" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="procesos" type="tns:proceso" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proceso">
+<xs:sequence>
+<xs:element name="autor" type="xs:string" minOccurs="0"/>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="costo" type="xs:double"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcionVersion" type="xs:string" minOccurs="0"/>
+<xs:element name="documentacion" type="xs:string" minOccurs="0"/>
+<xs:element name="duracion" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idClasificacionProceso" type="tns:clasificacionProceso" minOccurs="0"/>
+<xs:element name="idEquivalenciasTiempo" type="tns:equivalenciaTiempo" minOccurs="0"/>
+<xs:element name="idPrioridad" type="tns:prioridad" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="version" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equivalenciaTiempo">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="minutos" type="xs:long"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="prioridad">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultardetallesClasificacionTarea">
+<xs:sequence>
+<xs:element name="clasificacionTareaActual" type="tns:clasificacionTarea" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionTarea">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultardetallesClasificacionTareaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrClasificacionTareaDetalle" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrClasificacionTareaDetalle">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idClasificacionTarea" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="tareas" type="tns:tarea" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tarea">
+<xs:sequence>
+<xs:element name="autor" type="xs:string" minOccurs="0"/>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="costo" type="xs:double"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="documentacion" type="xs:string" minOccurs="0"/>
+<xs:element name="duracion" type="xs:decimal" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idClasificacionTarea" type="tns:clasificacionTarea" minOccurs="0"/>
+<xs:element name="idEquivalenciaTiempo" type="tns:equivalenciaTiempo" minOccurs="0"/>
+<xs:element name="idPolitica" type="tns:politica" minOccurs="0"/>
+<xs:element name="idPrioridad" type="tns:prioridad" minOccurs="0"/>
+<xs:element name="idProceso" type="tns:proceso" minOccurs="0"/>
+<xs:element name="implementacion" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tareaInformativa" type="xs:boolean"/>
+<xs:element name="tareaInicial" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="politica">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="documentacion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="implementacion" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

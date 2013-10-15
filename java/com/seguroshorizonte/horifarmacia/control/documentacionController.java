@@ -21,12 +21,12 @@ import javax.xml.ws.WebServiceRef;
 import org.primefaces.model.UploadedFile;
 
 /**
- * @author Pangea
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "documentacionController")
 @SessionScoped
 public class documentacionController {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeActividades.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeActividades.wsdl")
     private GestionDeActividades_Service service;
 
    
@@ -78,7 +78,7 @@ public class documentacionController {
          resultado=finalizarActividad(actividad_actual, sesionactual, condicion_actual);
         
         try {
-             ec.redirect("/PangeaFlowProyecto/faces/actividadusuario.xhtml");
+             ec.redirect("/HoriFarmaciaAnalistas/faces/actividadusuario.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }

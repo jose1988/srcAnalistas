@@ -15,7 +15,7 @@ import javax.xml.ws.WebServiceRef;
 
 /**
  *
- * @author PangeaTech
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "atrasController")
 @SessionScoped
@@ -26,7 +26,7 @@ public class atrasController {
     public void Atras() {
             try {
                 FacesContext contex = FacesContext.getCurrentInstance();
-                contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/usuarioGrupo.xhtml");
+                contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/usuarioGrupo.xhtml");
             } catch (Exception error) {
                 System.out.println("----------------------------Error---------------------------------" + error);
             }
@@ -36,7 +36,7 @@ public class atrasController {
       public void atrasIntancia() {
             try {
                 FacesContext contex = FacesContext.getCurrentInstance();
-                contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/instanciaUsuario.xhtml");
+                contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/instanciaUsuario.xhtml");
             } catch (Exception error) {
                 System.out.println("----------------------------Error---------------------------------" + error);
             }

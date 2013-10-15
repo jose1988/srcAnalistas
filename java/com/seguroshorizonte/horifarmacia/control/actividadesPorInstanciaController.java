@@ -25,17 +25,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.WebServiceRef;
 
 /**
- * @author PangeaTech
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "actividadesPorInstanciaController")
 @SessionScoped
 public class actividadesPorInstanciaController {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeActividades.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeActividades.wsdl")
     private GestionDeActividades_Service service_2;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeInstancias.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeInstancias.wsdl")
     private GestionDeInstancias_Service service;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeControlDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service_1;
     /*
      * Objeto de la clase actividad para mostrar la información de las actividades por instancia en una lista
@@ -183,7 +183,7 @@ public class actividadesPorInstanciaController {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }
@@ -192,7 +192,7 @@ public class actividadesPorInstanciaController {
     public void redireccionarInstanciaUsuario() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/instanciaUsuario.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/instanciaUsuario.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }

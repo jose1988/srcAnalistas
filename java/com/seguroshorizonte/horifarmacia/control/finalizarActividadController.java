@@ -20,12 +20,12 @@ import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
 
 /**
- * @author Pangea
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "finalizarActController")
 @SessionScoped
 public class finalizarActividadController {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeActividades.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeActividades.wsdl")
     private GestionDeActividades_Service service;
 
    
@@ -60,7 +60,7 @@ public class finalizarActividadController {
         resultado=finalizarActividad(actividad_actual, sesionactual, condactual);
         
         try {
-             ec.redirect("/PangeaFlowProyecto/faces/actividadusuario.xhtml");
+             ec.redirect("/HoriFarmaciaAnalistas/faces/actividadusuario.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }
@@ -77,7 +77,7 @@ public class finalizarActividadController {
         sesion.setAttribute("condicionactual", condactual);
         
         try {
-             ec.redirect("/PangeaFlowProyecto/faces/documentacion.xhtml");
+             ec.redirect("/HoriFarmaciaAnalistas/faces/documentacion.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }

@@ -20,17 +20,17 @@ import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
 
 /**
- * @author PangeaTech
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "asignarActividadController")
 @SessionScoped
 public class asignarActividadController {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeActividades.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeActividades.wsdl")
     private GestionDeActividades_Service service_2;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeControlDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeUsuarios.wsdl")
     private GestionDeUsuarios_Service service;
     private List<Usuario> usuarios, lista;
     private Usuario usu;
@@ -83,7 +83,7 @@ public class asignarActividadController {
         if (envoltorio.getEstatus().compareTo("OK") == 0) {
             try {
                 FacesContext contex = FacesContext.getCurrentInstance();
-                contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/actividad.xhtml");
+                contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/actividad.xhtml");
             } catch (Exception error) {
                 System.out.println("----------------------------Error---------------------------------" + error);
             }
@@ -122,7 +122,7 @@ public class asignarActividadController {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }

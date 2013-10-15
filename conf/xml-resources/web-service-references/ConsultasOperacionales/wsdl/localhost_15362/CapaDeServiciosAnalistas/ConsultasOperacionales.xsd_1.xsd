@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios.capadeservicios.seguroshorizonte.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios.capadeservicios.seguroshorizonte.com/">
+
+<xs:element name="ConsultarEquivalencia" type="tns:ConsultarEquivalencia"/>
+
+<xs:element name="ConsultarEquivalenciaResponse" type="tns:ConsultarEquivalenciaResponse"/>
+
+<xs:element name="ConsultarEquivalencias" type="tns:ConsultarEquivalencias"/>
+
+<xs:element name="ConsultarEquivalenciasResponse" type="tns:ConsultarEquivalenciasResponse"/>
+
+<xs:element name="ConsultarGrupos" type="tns:ConsultarGrupos"/>
+
+<xs:element name="ConsultarGruposResponse" type="tns:ConsultarGruposResponse"/>
+
+<xs:element name="ConsultarOrganizacion" type="tns:ConsultarOrganizacion"/>
+
+<xs:element name="ConsultarOrganizacionResponse" type="tns:ConsultarOrganizacionResponse"/>
+
+<xs:element name="ConsultarPrioridad" type="tns:ConsultarPrioridad"/>
+
+<xs:element name="ConsultarPrioridadResponse" type="tns:ConsultarPrioridadResponse"/>
+
+<xs:element name="ConsultarPrioridades" type="tns:ConsultarPrioridades"/>
+
+<xs:element name="ConsultarPrioridadesResponse" type="tns:ConsultarPrioridadesResponse"/>
+
+<xs:element name="clasificacionUsuario" type="tns:clasificacionUsuario"/>
+
+<xs:element name="equivalenciaTiempo" type="tns:equivalenciaTiempo"/>
+
+<xs:element name="grupo" type="tns:grupo"/>
+
+<xs:element name="organizacion" type="tns:organizacion"/>
+
+<xs:element name="prioridad" type="tns:prioridad"/>
+
+<xs:element name="skin" type="tns:skin"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="ConsultarPrioridad">
+<xs:sequence>
+<xs:element name="prioridadActual" type="tns:prioridad" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="prioridad">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarPrioridadResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrPrioridad" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrPrioridad">
+<xs:sequence>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="prioridads" type="tns:prioridad" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarPrioridades">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ConsultarPrioridadesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrPrioridad" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarGrupos">
+<xs:sequence>
+<xs:element name="usuarioActual" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="clave" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="diasValidezClave" type="xs:int"/>
+<xs:element name="direccionOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionPersonal" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaActualizacionClave" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="idClasificacionUsuario" type="tns:clasificacionUsuario" minOccurs="0"/>
+<xs:element name="idOrganizacion" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="idSkin" type="tns:skin" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="primerApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="primerNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="rif" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="segundoNombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosOficina" type="xs:string" minOccurs="0"/>
+<xs:element name="telefonosPersonal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clasificacionUsuario">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="organizacion">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idOrganizacionPadre" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="mail" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="skin">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarGruposResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrGrupo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrGrupo">
+<xs:sequence>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="grupos" type="tns:grupo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grupo">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="documentacion" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaCreacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="idOrganizacion" type="tns:organizacion" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarEquivalencia">
+<xs:sequence>
+<xs:element name="EquivalenciaTiempoActual" type="tns:equivalenciaTiempo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equivalenciaTiempo">
+<xs:sequence>
+<xs:element name="borrado" type="xs:boolean"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="minutos" type="xs:long"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarEquivalenciaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrEquivalenciaTiempo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrEquivalenciaTiempo">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="minutos" type="xs:long" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarOrganizacion">
+<xs:sequence>
+<xs:element name="usuarioActual" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarOrganizacionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrOrganizacion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrOrganizacion">
+<xs:sequence>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+<xs:element name="organizacions" type="tns:organizacion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarEquivalencias">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ConsultarEquivalenciasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:wrEquivalenciaTiempos" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wrEquivalenciaTiempos">
+<xs:sequence>
+<xs:element name="equivalenciaTiempos" type="tns:equivalenciaTiempo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="observacion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

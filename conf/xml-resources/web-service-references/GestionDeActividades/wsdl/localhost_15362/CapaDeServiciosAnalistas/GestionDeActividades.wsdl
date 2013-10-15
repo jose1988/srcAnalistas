@@ -10,18 +10,6 @@
 <message name="ConsumirColaResponse">
 <part name="parameters" element="tns:ConsumirColaResponse"/>
 </message>
-<message name="buscarEstados">
-<part name="parameters" element="tns:buscarEstados"/>
-</message>
-<message name="buscarEstadosResponse">
-<part name="parameters" element="tns:buscarEstadosResponse"/>
-</message>
-<message name="listarActividades">
-<part name="parameters" element="tns:listarActividades"/>
-</message>
-<message name="listarActividadesResponse">
-<part name="parameters" element="tns:listarActividadesResponse"/>
-</message>
 <message name="AgregarDocumento">
 <part name="parameters" element="tns:AgregarDocumento"/>
 </message>
@@ -40,11 +28,11 @@
 <message name="ConsultarActividadesResponse">
 <part name="parameters" element="tns:ConsultarActividadesResponse"/>
 </message>
-<message name="ConsultarDocumento">
-<part name="parameters" element="tns:ConsultarDocumento"/>
+<message name="FinalizarActividad">
+<part name="parameters" element="tns:FinalizarActividad"/>
 </message>
-<message name="ConsultarDocumentoResponse">
-<part name="parameters" element="tns:ConsultarDocumentoResponse"/>
+<message name="FinalizarActividadResponse">
+<part name="parameters" element="tns:FinalizarActividadResponse"/>
 </message>
 <message name="ConsultarDocumentos">
 <part name="parameters" element="tns:ConsultarDocumentos"/>
@@ -52,11 +40,11 @@
 <message name="ConsultarDocumentosResponse">
 <part name="parameters" element="tns:ConsultarDocumentosResponse"/>
 </message>
-<message name="FinalizarActividad">
-<part name="parameters" element="tns:FinalizarActividad"/>
+<message name="ConsultarDocumento">
+<part name="parameters" element="tns:ConsultarDocumento"/>
 </message>
-<message name="FinalizarActividadResponse">
-<part name="parameters" element="tns:FinalizarActividadResponse"/>
+<message name="ConsultarDocumentoResponse">
+<part name="parameters" element="tns:ConsultarDocumentoResponse"/>
 </message>
 <message name="IniciarActividad">
 <part name="parameters" element="tns:IniciarActividad"/>
@@ -94,6 +82,12 @@
 <message name="ConsultarActividadesColaResponse">
 <part name="parameters" element="tns:ConsultarActividadesColaResponse"/>
 </message>
+<message name="buscarEstados">
+<part name="parameters" element="tns:buscarEstados"/>
+</message>
+<message name="buscarEstadosResponse">
+<part name="parameters" element="tns:buscarEstadosResponse"/>
+</message>
 <message name="condicionesTransiciones">
 <part name="parameters" element="tns:condicionesTransiciones"/>
 </message>
@@ -106,18 +100,16 @@
 <message name="pendienteActividadResponse">
 <part name="parameters" element="tns:pendienteActividadResponse"/>
 </message>
+<message name="listarActividades">
+<part name="parameters" element="tns:listarActividades"/>
+</message>
+<message name="listarActividadesResponse">
+<part name="parameters" element="tns:listarActividadesResponse"/>
+</message>
 <portType name="GestionDeActividades">
 <operation name="ConsumirCola">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsumirColaRequest" message="tns:ConsumirCola"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsumirColaResponse" message="tns:ConsumirColaResponse"/>
-</operation>
-<operation name="buscarEstados">
-<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/buscarEstadosRequest" message="tns:buscarEstados"/>
-<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/buscarEstadosResponse" message="tns:buscarEstadosResponse"/>
-</operation>
-<operation name="listarActividades">
-<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/listarActividadesRequest" message="tns:listarActividades"/>
-<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/listarActividadesResponse" message="tns:listarActividadesResponse"/>
 </operation>
 <operation name="AgregarDocumento">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/AgregarDocumentoRequest" message="tns:AgregarDocumento"/>
@@ -131,17 +123,17 @@
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarActividadesRequest" message="tns:ConsultarActividades"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarActividadesResponse" message="tns:ConsultarActividadesResponse"/>
 </operation>
-<operation name="ConsultarDocumento">
-<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentoRequest" message="tns:ConsultarDocumento"/>
-<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentoResponse" message="tns:ConsultarDocumentoResponse"/>
+<operation name="FinalizarActividad">
+<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/FinalizarActividadRequest" message="tns:FinalizarActividad"/>
+<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/FinalizarActividadResponse" message="tns:FinalizarActividadResponse"/>
 </operation>
 <operation name="ConsultarDocumentos">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentosRequest" message="tns:ConsultarDocumentos"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentosResponse" message="tns:ConsultarDocumentosResponse"/>
 </operation>
-<operation name="FinalizarActividad">
-<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/FinalizarActividadRequest" message="tns:FinalizarActividad"/>
-<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/FinalizarActividadResponse" message="tns:FinalizarActividadResponse"/>
+<operation name="ConsultarDocumento">
+<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentoRequest" message="tns:ConsultarDocumento"/>
+<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarDocumentoResponse" message="tns:ConsultarDocumentoResponse"/>
 </operation>
 <operation name="IniciarActividad">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/IniciarActividadRequest" message="tns:IniciarActividad"/>
@@ -167,6 +159,10 @@
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarActividadesColaRequest" message="tns:ConsultarActividadesCola"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/ConsultarActividadesColaResponse" message="tns:ConsultarActividadesColaResponse"/>
 </operation>
+<operation name="buscarEstados">
+<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/buscarEstadosRequest" message="tns:buscarEstados"/>
+<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/buscarEstadosResponse" message="tns:buscarEstadosResponse"/>
+</operation>
 <operation name="condicionesTransiciones">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/condicionesTransicionesRequest" message="tns:condicionesTransiciones"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/condicionesTransicionesResponse" message="tns:condicionesTransicionesResponse"/>
@@ -175,28 +171,14 @@
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/pendienteActividadRequest" message="tns:pendienteActividad"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/pendienteActividadResponse" message="tns:pendienteActividadResponse"/>
 </operation>
+<operation name="listarActividades">
+<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/listarActividadesRequest" message="tns:listarActividades"/>
+<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeActividades/listarActividadesResponse" message="tns:listarActividadesResponse"/>
+</operation>
 </portType>
 <binding name="GestionDeActividadesPortBinding" type="tns:GestionDeActividades">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="ConsumirCola">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarEstados">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarActividades">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -232,7 +214,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ConsultarDocumento">
+<operation name="FinalizarActividad">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -250,7 +232,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="FinalizarActividad">
+<operation name="ConsultarDocumento">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -313,6 +295,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="buscarEstados">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="condicionesTransiciones">
 <soap:operation soapAction=""/>
 <input>
@@ -323,6 +314,15 @@
 </output>
 </operation>
 <operation name="pendienteActividad">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarActividades">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

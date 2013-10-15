@@ -26,7 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.WebServiceRef;
 
 /**
- * @author Pangea
+ * @author HoriFarmaciaAnalistas
  */
 
 @ManagedBean(name = "actividadController")
@@ -34,9 +34,9 @@ import javax.xml.ws.WebServiceRef;
 @SessionScoped
 
 public class actividadController {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeActividades.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas//GestionDeActividades.wsdl")
     private GestionDeActividades_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas//GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service;
    
     
@@ -218,7 +218,7 @@ public class actividadController {
         
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/asignarActividad.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/asignarActividad.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }    
@@ -285,7 +285,7 @@ public class actividadController {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }

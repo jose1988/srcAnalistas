@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.seguroshorizonte.horifarmacia.control;
+package com.seguroshorizonte.HoriFarmaciaAnalistas.control;
 
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
 import com.seguroshorizonte.capadeservicios.servicios.Usuario;
@@ -25,18 +25,18 @@ import javax.xml.ws.WebServiceRef;
 import org.primefaces.event.TabChangeEvent;
 
 /**
- * @author Pangea
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "usuarioGrupoController")
 @SessionScoped
 public class usuarioGrupoController implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeControlDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeUsuarios.wsdl")
     private GestionDeUsuarios_Service service;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeGrupo.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeGrupo.wsdl")
     private GestionDeGrupo_Service service_2;
     
     /*
@@ -399,7 +399,7 @@ public class usuarioGrupoController implements Serializable {
         
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/actividadesPorUsuario.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/actividadesPorUsuario.xhtml");
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }
@@ -454,7 +454,7 @@ public class usuarioGrupoController implements Serializable {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }

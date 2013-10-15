@@ -22,15 +22,15 @@ import org.primefaces.model.TreeNode;
 
 /**
  *
- * @author Pangeatech
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "redactarMensajeController")
 @SessionScoped
 public class redactarMensajeController {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeGrupo.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeGrupo.wsdl")
     private GestionDeGrupo_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/Mensajeria.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/Mensajeria.wsdl")
     private Mensajeria_Service service;
     private Usuario usuarioLogueo;
     /**

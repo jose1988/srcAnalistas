@@ -16,6 +16,12 @@
 <message name="ConsultarActividadesPorInstanciaResponse">
 <part name="parameters" element="tns:ConsultarActividadesPorInstanciaResponse"/>
 </message>
+<message name="buscarEstados">
+<part name="parameters" element="tns:buscarEstados"/>
+</message>
+<message name="buscarEstadosResponse">
+<part name="parameters" element="tns:buscarEstadosResponse"/>
+</message>
 <message name="CerrarInstancia">
 <part name="parameters" element="tns:CerrarInstancia"/>
 </message>
@@ -70,12 +76,6 @@
 <message name="ObtenerTareasInicialesResponse">
 <part name="parameters" element="tns:ObtenerTareasInicialesResponse"/>
 </message>
-<message name="buscarEstados">
-<part name="parameters" element="tns:buscarEstados"/>
-</message>
-<message name="buscarEstadosResponse">
-<part name="parameters" element="tns:buscarEstadosResponse"/>
-</message>
 <portType name="GestionDeInstancias">
 <operation name="CrearPeriodo">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/CrearPeriodoRequest" message="tns:CrearPeriodo"/>
@@ -84,6 +84,10 @@
 <operation name="ConsultarActividadesPorInstancia">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/ConsultarActividadesPorInstanciaRequest" message="tns:ConsultarActividadesPorInstancia"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/ConsultarActividadesPorInstanciaResponse" message="tns:ConsultarActividadesPorInstanciaResponse"/>
+</operation>
+<operation name="buscarEstados">
+<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/buscarEstadosRequest" message="tns:buscarEstados"/>
+<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/buscarEstadosResponse" message="tns:buscarEstadosResponse"/>
 </operation>
 <operation name="CerrarInstancia">
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/CerrarInstanciaRequest" message="tns:CerrarInstancia"/>
@@ -121,10 +125,6 @@
 <input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/ObtenerTareasInicialesRequest" message="tns:ObtenerTareasIniciales"/>
 <output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/ObtenerTareasInicialesResponse" message="tns:ObtenerTareasInicialesResponse"/>
 </operation>
-<operation name="buscarEstados">
-<input wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/buscarEstadosRequest" message="tns:buscarEstados"/>
-<output wsam:Action="http://servicios.capadeservicios.seguroshorizonte.com/GestionDeInstancias/buscarEstadosResponse" message="tns:buscarEstadosResponse"/>
-</operation>
 </portType>
 <binding name="GestionDeInstanciasPortBinding" type="tns:GestionDeInstancias">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
@@ -138,6 +138,15 @@
 </output>
 </operation>
 <operation name="ConsultarActividadesPorInstancia">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarEstados">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -219,15 +228,6 @@
 </output>
 </operation>
 <operation name="ObtenerTareasIniciales">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarEstados">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

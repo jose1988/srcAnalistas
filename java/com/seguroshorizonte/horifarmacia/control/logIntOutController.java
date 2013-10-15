@@ -17,17 +17,23 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
+import javax.xml.namespace.QName;
+import javax.xml.transform.Source;
+import javax.xml.ws.Dispatch;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.ws.Service;
+import java.io.StringReader;
 
 /**
- * @author PangeaTech
+ * @author HoriFarmaciaAnalistas
  */
 @ManagedBean(name = "logIntOutController")
 @SessionScoped
 public class logIntOutController implements Serializable{
-
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeUsuarios.wsdl")
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeUsuarios.wsdl")
     private GestionDeUsuarios_Service service_1;
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServicios/GestionDeControlDeUsuarios.wsdl")
+     
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service;
     /**
      * objeto con el cual se haran las validaciones en cuanto al inicio y el
@@ -111,7 +117,7 @@ public class logIntOutController implements Serializable{
             Sesion.setAttribute("Sesion", envoltorio.getSesions().get(0));
             try {
                 FacesContext contex = FacesContext.getCurrentInstance();
-                contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/actividadgrupousuario.xhtml");
+                contex.getExternalContext().redirect("/HoriFarmaciasAnalistas/faces/actividadgrupousuario.xhtml");
             } catch (Exception e) {
                 System.out.println("----------------------------Error---------------------------------" + e);
             }
@@ -161,7 +167,7 @@ public class logIntOutController implements Serializable{
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/PangeaFlowProyecto/faces/actividadgrupousuario.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciasAnalistas/faces/actividadgrupousuario.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }
@@ -207,13 +213,19 @@ public class logIntOutController implements Serializable{
         return port.logIn(sesionActual);
     }
 
-    private Usuario buscarUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual) {
-        com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios port = service_1.getGestionDeUsuariosPort();
-        return port.buscarUsuario(usuarioActual);
-    }
 
     private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
     }
+
+    private Usuario buscarUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario usuarioActual) {
+        com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios port = service_1.getGestionDeUsuariosPort();
+        return port.buscarUsuario(usuarioActual);
+    }
+
+   
+
+  
+
 }
