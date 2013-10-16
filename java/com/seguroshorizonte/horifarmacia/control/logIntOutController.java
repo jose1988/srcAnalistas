@@ -4,7 +4,6 @@ import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeUsuarios_Service;
 import com.seguroshorizonte.capadeservicios.servicios.Sesion;
 import com.seguroshorizonte.capadeservicios.servicios.Usuario;
-import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
 import com.seguroshorizonte.capadeservicios.servicios.WrSesion;
 import java.io.Serializable;
 import java.net.InetAddress;
@@ -17,12 +16,6 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.xml.ws.WebServiceRef;
-import javax.xml.namespace.QName;
-import javax.xml.transform.Source;
-import javax.xml.ws.Dispatch;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.ws.Service;
-import java.io.StringReader;
 
 /**
  * @author HoriFarmaciaAnalistas

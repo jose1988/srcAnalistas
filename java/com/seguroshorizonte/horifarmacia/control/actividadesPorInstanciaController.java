@@ -92,7 +92,6 @@ public class actividadesPorInstanciaController {
                 j++;
             }
         }
-        // SesionAbierta.removeAttribute("IdInstancia");
     }
 
     /**

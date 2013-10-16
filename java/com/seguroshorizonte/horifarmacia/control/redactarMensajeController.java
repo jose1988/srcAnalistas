@@ -9,6 +9,8 @@ import com.seguroshorizonte.capadeservicios.servicios.Sesion;
 import com.seguroshorizonte.capadeservicios.servicios.Usuario;
 import com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol;
 import com.seguroshorizonte.capadeservicios.servicios.WrResultado;
+import com.seguroshorizonte.capadeservicios.servicios.WrRol;
+import com.seguroshorizonte.capadeservicios.servicios.WrUsuarioGrupoRol;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -66,23 +68,35 @@ public class redactarMensajeController {
         root = new DefaultTreeNode("Root", null);
         List<Grupo> Grupos = listarGrupos();
         TreeNode nodosGrupos[] = new TreeNode[Grupos.size()];
-        for (int i = 0; i < Grupos.size(); i++) {
-            List< Rol> Roles = listarRolesPorGrupo(Grupos.get(i), false);
-            TreeNode nodosRoles[] = new TreeNode[Roles.size()];
-            if (Roles.size() > 0) {
-                nodosGrupos[i] = new DefaultTreeNode(Grupos.get(i).getNombre() + "@grupo", root);
-                for (int j = 0; j < Roles.size(); j++) {
-                    List< UsuarioGrupoRol> Usuarios = listarUsuariosPorGrupoYRol(Grupos.get(i), Roles.get(j));
-                    if (Usuarios.size() > 0) {
-                        nodosRoles[j] = new DefaultTreeNode(Roles.get(j).getNombre() + "@rol", nodosGrupos[i]);
-                        TreeNode nodosUsuarios[] = new TreeNode[Usuarios.size()];
-                        for (int k = 0; k < Usuarios.size(); k++) {
-                            nodosUsuarios[k] = new DefaultTreeNode(Usuarios.get(k).getIdUsuario().getId() + "@usuario", nodosRoles[j]);
+      for (int ii = 0; ii < Grupos.size(); ii++) {
+                WrRol resultadoRol = listarRolesPorGrupo(Grupos.get(ii), false);
+                if (resultadoRol.getEstatus().compareTo("OK") == 0) {
+                    List< Rol> Roles = resultadoRol.getRols();
+                    TreeNode nodosRoles[] = new TreeNode[Roles.size()];
+                    if (Roles.size() > 0) {
+                        nodosGrupos[ii] = new DefaultTreeNode(Grupos.get(ii).getNombre() + "@grupo", root);
+                        for (int jj = 0; jj < Roles.size(); jj++) {
+                            WrUsuarioGrupoRol resultadoLista = listarUsuariosPorGrupoYRol(Grupos.get(ii), Roles.get(jj));
+                            if (resultadoLista.getEstatus().compareTo("OK") == 0) {
+                                List< UsuarioGrupoRol> Usuarios = resultadoLista.getUsuarioGrupoRols();
+                                if (Usuarios.size() > 0) {
+                                    nodosRoles[jj] = new DefaultTreeNode(Roles.get(jj).getNombre() + "@rol", nodosGrupos[ii]);
+                                    TreeNode nodosUsuarios[] = new TreeNode[Usuarios.size()];
+                                    for (int k = 0; k < Usuarios.size(); k++) {
+                                        nodosUsuarios[k] = new DefaultTreeNode(Usuarios.get(k).getIdUsuario().getId() + "@usuario", nodosRoles[jj]);
+                                    }
+                                }
+                            } else {
+                                System.out.println("No se pudo mostrar debido a que " + resultadoLista.getObservacion());
+                            }
+
                         }
                     }
+                } else {
+                    System.out.println("No se pudo mostrar debido a que " + resultadoRol.getObservacion());
                 }
+
             }
-        }
     }
 
     /**
@@ -203,13 +217,15 @@ public class redactarMensajeController {
         return port.listarGrupos();
     }
 
-    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Rol> listarRolesPorGrupo(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
+    private WrRol listarRolesPorGrupo(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, boolean borrado) {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
         return port.listarRolesPorGrupo(grupousuarios, borrado);
     }
 
-    private java.util.List<com.seguroshorizonte.capadeservicios.servicios.UsuarioGrupoRol> listarUsuariosPorGrupoYRol(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, com.seguroshorizonte.capadeservicios.servicios.Rol roles) {
+    private WrUsuarioGrupoRol listarUsuariosPorGrupoYRol(com.seguroshorizonte.capadeservicios.servicios.Grupo grupousuarios, com.seguroshorizonte.capadeservicios.servicios.Rol roles) {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_1.getGestionDeGrupoPort();
         return port.listarUsuariosPorGrupoYRol(grupousuarios, roles);
     }
+
+
 }
