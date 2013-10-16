@@ -12,6 +12,7 @@ import com.seguroshorizonte.capadeservicios.servicios.Condicion;
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades_Service;
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios_Service;
 import com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo_Service;
+import com.seguroshorizonte.capadeservicios.servicios.GestionDeInstancias_Service;
 import com.seguroshorizonte.capadeservicios.servicios.Grupo;
 import com.seguroshorizonte.capadeservicios.servicios.Mensajeria_Service;
 import com.seguroshorizonte.capadeservicios.servicios.Sesion;
@@ -50,6 +51,8 @@ import org.primefaces.model.TreeNode;
 @ManagedBean(name = "gestionActividades")
 @SessionScoped
 public class gestionActividadesController implements Serializable {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeInstancias.wsdl")
+    private GestionDeInstancias_Service service_4;
 
     private static final long serialVersionUID = 1L;
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
@@ -912,4 +915,6 @@ public class gestionActividadesController implements Serializable {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.consultarActividad(actividadActual);
     }
+
+   
 }
