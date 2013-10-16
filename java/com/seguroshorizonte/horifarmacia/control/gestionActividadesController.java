@@ -91,6 +91,9 @@ public class gestionActividadesController implements Serializable {
     private long UT;
     private String equivalencia;
     private String GrupoPanel;
+    private String parametro="";
+
+  
 
     /**
      * enlista los estados, muestra por defecto las actividades el primer estado
@@ -445,6 +448,29 @@ public class gestionActividadesController implements Serializable {
         return " background-color: white;";
     }
 
+    public void existeParametro() {
+            if (parametro.compareTo("") != 0) {
+            if (parametro.compareTo("OK") == 0) {
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Actividad Finalizada", "Se ha finalizado la actividad satisfactoriamente"));
+            } else {
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "No se pudo ejecutar la acción"));
+            }
+            parametro = "";
+            }
+            }
+    
+            public void finalizarActividad() {
+
+            try {
+            FacesContext contex = FacesContext.getCurrentInstance();
+            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct="+act.getId()+"&idSes="+sesion_actual.getId()+"&idCond=1");
+            } catch (Exception e) {
+            System.out.println("----------------------------Error---------------------------------" + e);
+            }
+            }
+    
     /**
      *
      * @param actividadx
@@ -800,7 +826,13 @@ public class gestionActividadesController implements Serializable {
     public void setMailbox(TreeNode mailbox) {
         this.mailbox = mailbox;
     }
+  public String getParametro() {
+        return parametro;
+    }
 
+    public void setParametro(String parametro) {
+        this.parametro = parametro;
+    }
     /**
      *
      * @return
