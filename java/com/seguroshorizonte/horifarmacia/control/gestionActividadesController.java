@@ -95,6 +95,7 @@ public class gestionActividadesController implements Serializable {
     private String equivalencia;
     private String GrupoPanel;
     private String parametro = "";
+    private String parametroObser = "";
 
     /**
      * enlista los estados, muestra por defecto las actividades el primer estado
@@ -161,10 +162,17 @@ public class gestionActividadesController implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public Grupo getGrupoSeleccionado() {
         return grupoSeleccionado;
     }
 
+    /**
+     *
+     */
     public void botonActivado() {
 
         activi.setEstado(estadoSeleccionado.getData().toString());
@@ -280,6 +288,8 @@ public class gestionActividadesController implements Serializable {
     /**
      * cambia el estado de la actividad pendiente a abierta, inicia la actividad
      * y refresca el datatable
+     *
+     * @param evento
      */
     public void cambiarEstado(CloseEvent evento) {
 
@@ -358,7 +368,7 @@ public class gestionActividadesController implements Serializable {
 
     /**
      *
-     * @param actividadx
+     * @param actividadxx
      * @return
      * @throws DatatypeConfigurationException
      */
@@ -448,24 +458,56 @@ public class gestionActividadesController implements Serializable {
         return " background-color: white;";
     }
 
+    /**
+     *
+     */
     public void existeParametro() {
+        String Mensaje = "";
         if (parametro.compareTo("") != 0) {
             if (parametro.compareTo("OK") == 0) {
                 FacesContext context = FacesContext.getCurrentInstance();
                 context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Actividad Finalizada", "Se ha finalizado la actividad satisfactoriamente"));
             } else {
+                if (parametro.compareTo("FAIL") == 0) {
+                    try {
+                        int Nro = Integer.parseInt(parametroObser);
+                        switch (Nro) {
+                            case 1:
+                                Mensaje = "Se finalizo la actividad pero no se le asigno una nueva actividad debido a que no cumple con los requerimientos";
+                                break;
+                            case 2:
+                                Mensaje = "Se finalizo la actividad pero no se encontro una actividad en cola para ser asignada";
+                                break;
+                            case 3:
+                                Mensaje = "No se pudo ejecutar la acción porque no se pudo finalizar la actividad ";
+                                break;
+                            default:
+                                Mensaje = "No se pudo ejecutar la acción";
+                                break;
+                        }
+                    } catch (Exception e) {
+                        Mensaje = "No se pudo ejecutar la acción";
+                    }
+
+                }
                 FacesContext context = FacesContext.getCurrentInstance();
-                context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "No se pudo ejecutar la acción"));
+                context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Advertencia", Mensaje));
             }
-            parametro = "";
+
+
         }
+        parametroObser = "";
+        parametro = "";
     }
 
+    /**
+     *
+     */
     public void finalizarActividad() {
 
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct=" + act.getId() + "&idSes=" + sesion_actual.getId() + "&idCond=1&idUsu="+idusu.getId());
+            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct=" + act.getId() + "&idSes=" + sesion_actual.getId() + "&idCond=1&idUsu=" + idusu.getId());
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }
@@ -473,7 +515,7 @@ public class gestionActividadesController implements Serializable {
 
     /**
      *
-     * @param actividadx
+     * @param actividadxx
      * @return
      * @throws DatatypeConfigurationException
      */
@@ -706,10 +748,18 @@ public class gestionActividadesController implements Serializable {
         this.aux = aux;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isBoton() {
         return boton;
     }
 
+    /**
+     *
+     * @param boton
+     */
     public void setBoton(boolean boton) {
         this.boton = boton;
     }
@@ -826,10 +876,18 @@ public class gestionActividadesController implements Serializable {
         this.mailbox = mailbox;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getParametro() {
         return parametro;
     }
 
+    /**
+     *
+     * @param parametro
+     */
     public void setParametro(String parametro) {
         this.parametro = parametro;
     }
@@ -850,12 +908,36 @@ public class gestionActividadesController implements Serializable {
         this.estados = estados;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getGrupoPanel() {
         return GrupoPanel;
     }
 
+    /**
+     *
+     * @param GrupoPanel
+     */
     public void setGrupoPanel(String GrupoPanel) {
         this.GrupoPanel = GrupoPanel;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getParametroObser() {
+        return parametroObser;
+    }
+
+    /**
+     *
+     * @param parametroObser
+     */
+    public void setParametroObser(String parametroObser) {
+        this.parametroObser = parametroObser;
     }
 
     /**
