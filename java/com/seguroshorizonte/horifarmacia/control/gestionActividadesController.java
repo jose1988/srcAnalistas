@@ -51,9 +51,9 @@ import org.primefaces.model.TreeNode;
 @ManagedBean(name = "gestionActividades")
 @SessionScoped
 public class gestionActividadesController implements Serializable {
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeInstancias.wsdl")
     private GestionDeInstancias_Service service_4;
-
     private static final long serialVersionUID = 1L;
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_15362/CapaDeServiciosAnalistas/GestionDeControlDeUsuarios.wsdl")
     private GestionDeControlDeUsuarios_Service service_3;
@@ -94,9 +94,7 @@ public class gestionActividadesController implements Serializable {
     private long UT;
     private String equivalencia;
     private String GrupoPanel;
-    private String parametro="";
-
-  
+    private String parametro = "";
 
     /**
      * enlista los estados, muestra por defecto las actividades el primer estado
@@ -135,7 +133,7 @@ public class gestionActividadesController implements Serializable {
                 i++;
             }
 
-           
+
             grupos = this.gruposUsuario(idusu);
             estadoSeleccionado = estact.getChildren().get(0);
             indice = 0;
@@ -251,32 +249,32 @@ public class gestionActividadesController implements Serializable {
     public void onNodeSelect(NodeSelectEvent event) {
 
         int j = 0;
-        
-            activi = new Actividad();
-            activi.setEstado(event.getTreeNode().toString());
-            actividad = consultarActividades(idusu, activi);
-            actividades = new ArrayList<Actividad>();
-            if (actividad.getActividads().isEmpty()) {
-                actividades = null;
-            }
-            Grupo g = new Grupo();
-            for (int i = 0; i < grupos.size(); i++) {
-                if (grupos.get(i).getNombre().compareTo(GrupoPanel) == 0) {
-                    g = grupos.get(i);
-                    indice = i;
-                }
 
+        activi = new Actividad();
+        activi.setEstado(event.getTreeNode().toString());
+        actividad = consultarActividades(idusu, activi);
+        actividades = new ArrayList<Actividad>();
+        if (actividad.getActividads().isEmpty()) {
+            actividades = null;
+        }
+        Grupo g = new Grupo();
+        for (int i = 0; i < grupos.size(); i++) {
+            if (grupos.get(i).getNombre().compareTo(GrupoPanel) == 0) {
+                g = grupos.get(i);
+                indice = i;
             }
-            while (actividad.getActividads().size() > j) {
-                act = actividad.getActividads().get(j);
-                if (act.getIdInstancia().getIdPeriodoGrupoProceso().getIdGrupo().getId().compareTo(g.getId()) != 0) {
-                } else {
-                    actividades.add(act);
-                }
 
-                j++;
+        }
+        while (actividad.getActividads().size() > j) {
+            act = actividad.getActividads().get(j);
+            if (act.getIdInstancia().getIdPeriodoGrupoProceso().getIdGrupo().getId().compareTo(g.getId()) != 0) {
+            } else {
+                actividades.add(act);
             }
-        
+
+            j++;
+        }
+
     }
 
     /**
@@ -328,7 +326,6 @@ public class gestionActividadesController implements Serializable {
         }
 
     }
-
 
     /**
      * se toma la condicion, la sesion y la actividad y se cierra la actividad a
@@ -452,28 +449,28 @@ public class gestionActividadesController implements Serializable {
     }
 
     public void existeParametro() {
-            if (parametro.compareTo("") != 0) {
+        if (parametro.compareTo("") != 0) {
             if (parametro.compareTo("OK") == 0) {
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Actividad Finalizada", "Se ha finalizado la actividad satisfactoriamente"));
+                FacesContext context = FacesContext.getCurrentInstance();
+                context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Actividad Finalizada", "Se ha finalizado la actividad satisfactoriamente"));
             } else {
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "No se pudo ejecutar la acción"));
+                FacesContext context = FacesContext.getCurrentInstance();
+                context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "No se pudo ejecutar la acción"));
             }
             parametro = "";
-            }
-            }
-    
-            public void finalizarActividad() {
+        }
+    }
 
-            try {
+    public void finalizarActividad() {
+
+        try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct="+act.getId()+"&idSes="+sesion_actual.getId()+"&idCond=1");
-            } catch (Exception e) {
+            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct=" + act.getId() + "&idSes=" + sesion_actual.getId() + "&idCond=1&idUsu="+idusu.getId());
+        } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
-            }
-            }
-    
+        }
+    }
+
     /**
      *
      * @param actividadx
@@ -528,7 +525,6 @@ public class gestionActividadesController implements Serializable {
         return " background-color: white;";
     }
 
-    
     /**
      * Método para verificar si el usuario esta logueado
      *
@@ -562,7 +558,7 @@ public class gestionActividadesController implements Serializable {
     public void cerrarPorInactividad() {
         WrResultado result;
         result = logOut(sesionLogueo);
-         FacesContext fc = FacesContext.getCurrentInstance();
+        FacesContext fc = FacesContext.getCurrentInstance();
         ExternalContext ec = fc.getExternalContext();
 
         HttpSession SesionAbierta = (HttpSession) ec.getSession(true);
@@ -576,7 +572,7 @@ public class gestionActividadesController implements Serializable {
     public void Redireccionar() {
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("/HoriFarmaciaAnalistas/faces/index.xhtml");
+            contex.getExternalContext().redirect("/HoriFarmaciasAnalistas/faces/index.xhtml");
         } catch (Exception error) {
             System.out.println("----------------------------Error---------------------------------" + error);
         }
@@ -829,13 +825,15 @@ public class gestionActividadesController implements Serializable {
     public void setMailbox(TreeNode mailbox) {
         this.mailbox = mailbox;
     }
-  public String getParametro() {
+
+    public String getParametro() {
         return parametro;
     }
 
     public void setParametro(String parametro) {
         this.parametro = parametro;
     }
+
     /**
      *
      * @return
@@ -882,8 +880,6 @@ public class gestionActividadesController implements Serializable {
         return port.iniciarActividad(actividadActual, sesionActual);
     }
 
-   
-
     private java.util.List<com.seguroshorizonte.capadeservicios.servicios.Grupo> gruposUsuario(com.seguroshorizonte.capadeservicios.servicios.Usuario user) {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeGrupo port = service_2.getGestionDeGrupoPort();
         return port.gruposUsuario(user);
@@ -899,8 +895,6 @@ public class gestionActividadesController implements Serializable {
         return port.pendienteActividad(actividadActual, sesionActual);
     }
 
-   
-
     private boolean logSesion(com.seguroshorizonte.capadeservicios.servicios.Sesion sesionActual) {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeControlDeUsuarios port = service_3.getGestionDeControlDeUsuariosPort();
         return port.logSesion(sesionActual);
@@ -915,6 +909,4 @@ public class gestionActividadesController implements Serializable {
         com.seguroshorizonte.capadeservicios.servicios.GestionDeActividades port = service_1.getGestionDeActividadesPort();
         return port.consultarActividad(actividadActual);
     }
-
-   
 }
