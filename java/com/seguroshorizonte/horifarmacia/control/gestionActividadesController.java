@@ -507,7 +507,7 @@ public class gestionActividadesController implements Serializable {
 
         try {
             FacesContext contex = FacesContext.getCurrentInstance();
-            contex.getExternalContext().redirect("http://localhost:2020/aplicacionesExternas/externa.php?idAct=" + act.getId() + "&idSes=" + sesion_actual.getId() + "&idCond=1&idUsu=" + idusu.getId());
+            contex.getExternalContext().redirect("http://192.168.1.102:2020/aplicacionesExternas/externa.php?idAct=" + act.getId() + "&idSes=" + sesion_actual.getId() + "&idCond=1&idUsu=" + idusu.getId());
         } catch (Exception e) {
             System.out.println("----------------------------Error---------------------------------" + e);
         }
